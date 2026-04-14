@@ -11,17 +11,27 @@
 class Ve : public Entity {
 protected:
     std::string ngaySuDung;
+    std::string khuVucGhe;   // A, B, C...
+    std::string soGhe;       // A12, B3...
     double giaCoBan;
 
 public:
-    Ve(std::string ngay, double gia);
+    Ve(const std::string& ngay,
+       const std::string& zone,
+       const std::string& seat,
+       double gia);
+
+    // ✅ BẮT BUỘC – IMPLEMENT HÀM THUẦN ẢO
+    double tinhGia() const override;
+
     virtual ~Ve() = default;
 
     std::string getNgaySuDung() const;
-    double getGiaCoBan() const;
+    std::string getKhuVuc() const;
+    std::string getSoGhe() const;
 
+    virtual std::string getTenTier() const = 0;
     virtual double tinhHeSoGia() const = 0;
-    double tinhGia() const override;
 };
 
 

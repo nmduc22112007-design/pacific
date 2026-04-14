@@ -4,12 +4,17 @@
 
 #ifndef VCT_PACIFIC_STAGE_1_TIERB_H
 #define VCT_PACIFIC_STAGE_1_TIERB_H
+#pragma once
 #include "Ve.h"
 
 class TierB : public Ve {
 public:
-    TierB(std::string ngay);
+    TierB(const std::string& ngay,
+          const std::string& zone,
+          const std::string& seat);
+
     double tinhHeSoGia() const override;
+    std::string getTenTier() const override;
 };
 
 #endif //VCT_PACIFIC_STAGE_1_TIERB_H

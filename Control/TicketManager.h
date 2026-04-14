@@ -1,19 +1,29 @@
-//
-// Created by PC on 4/9/2026.
-//
 
 #ifndef VCT_PACIFIC_STAGE_1_TICKERMANAGER_H
 #define VCT_PACIFIC_STAGE_1_TICKERMANAGER_H
 
-#include <vector>
-#include <algorithm>
+#pragma once
 
-template<typename T>
-double tinhTong(const std::vector<T>& ds) {
-    double sum = 0;
-    for (auto& x : ds) sum += x;
-    return sum;
-}
+#include <vector>
+#include <memory>
+#include <string>
+
+#include "../Model/KhachHang.h"
+
+class TicketManager {
+private:
+    std::vector<std::shared_ptr<KhachHang>> dsKhachHang;
+
+public:
+    // ===== LOAD DU LIEU =====
+    void loadKhachHangCSV(const std::string& path);
+
+    // ===== GETTER =====
+    std::vector<std::shared_ptr<KhachHang>>& getDanhSachKhachHang();
+
+    // ===== TIEN ICH =====
+    std::shared_ptr<KhachHang> timKhachHangTheoMa(const std::string& maKH);
+};
 
 
 #endif //VCT_PACIFIC_STAGE_1_TICKERMANAGER_H

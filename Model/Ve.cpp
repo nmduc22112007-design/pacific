@@ -3,18 +3,28 @@
 //
 
 #include "../Model/Ve.h"
-
-Ve::Ve(std::string ngay, double gia)
-    : ngaySuDung(ngay), giaCoBan(gia) {}
+Ve::Ve(const std::string& ngay,
+       const std::string& zone,
+       const std::string& seat,
+       double gia)
+    : ngaySuDung(ngay),
+      khuVucGhe(zone),
+      soGhe(seat),
+      giaCoBan(gia) {}
 
 std::string Ve::getNgaySuDung() const {
     return ngaySuDung;
 }
 
-double Ve::getGiaCoBan() const {
-    return giaCoBan;
+std::string Ve::getKhuVuc() const {
+    return khuVucGhe;
+}
+
+std::string Ve::getSoGhe() const {
+    return soGhe;
 }
 
 double Ve::tinhGia() const {
     return giaCoBan * tinhHeSoGia();
 }
+

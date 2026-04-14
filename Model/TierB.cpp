@@ -4,9 +4,16 @@
 
 #include "../Model/TierB.h"
 
-TierB::TierB(std::string ngay)
-    : Ve(ngay, 500000) {}
+TierB::TierB(const std::string& ngay,
+             const std::string& zone,
+             const std::string& seat)
+    : Ve(ngay, zone, seat, 399000) {}
 
 double TierB::tinhHeSoGia() const {
     return 1.0;
 }
+
+std::string TierB::getTenTier() const {
+    return "TierB";
+}
+

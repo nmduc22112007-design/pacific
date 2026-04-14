@@ -5,12 +5,15 @@
 #ifndef VCT_PACIFIC_STAGE_1_THREEDAYPASS_H
 #define VCT_PACIFIC_STAGE_1_THREEDAYPASS_H
 
-#include "Ve.h"
+#include "../Model/Ve.h"
 
 class ThreeDayPass : public Ve {
 public:
-    ThreeDayPass();
+    ThreeDayPass(const std::string& zone,
+                 const std::string& seat);
+
     double tinhHeSoGia() const override;
+    std::string getTenTier() const override;
 };
 
 

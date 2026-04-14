@@ -10,15 +10,30 @@
 #include <memory>
 #include "Ve.h"
 
+
 class KhachHang {
 private:
     std::string ten;
+    std::string maKH;
+    std::string sdt;
     std::vector<std::shared_ptr<Ve>> danhSachVe;
 
+
 public:
-    // Constructor & Destructor
-    KhachHang(std::string t);
-    ~KhachHang();
+
+    // ===== GETTER =====
+    std::string getMaKH() const;
+
+    bool daTonTaiGhe(const std::string& ngay,
+                 const std::string& zone,
+                 const std::string& seat) const;
+    // Constructor mới (dùng cho CSV)
+    KhachHang(const std::string& ma,
+              const std::string& t,
+              const std::string& phone);
+
+    // Constructor cũ (giữ lại cho menu)
+    explicit KhachHang(const std::string& t);
 
     // Rule of Five
     KhachHang(const KhachHang& other);

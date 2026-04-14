@@ -11,6 +11,7 @@ include_directories(
         Controller
         Utils
         Exception
+        Data
 )
 
 
@@ -44,4 +45,15 @@ add_executable(VCT_Pacific_Stage_1
         Exception/TicketLimitExceededException.h
         Exception/RefundQuantityException.h
         Exception/InvalidTicketIndexException.h
+        Utils/CSVReader.cpp
+        Utils/CSVReader.h
+
+
+        Data/ChiTietHoaDon.csv
+        Data/HoaDon.csv
+        Data/KhachHang.csv
+        Data/Ve.csv
+        Utils/SeatValidator.h
+        Exception/InvalidPhoneNumberException.h
+        Exception/InvalidNameException.h
 )

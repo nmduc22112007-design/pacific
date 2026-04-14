@@ -2,9 +2,28 @@
 #include <iostream>
 #include <iomanip>
 #include "../Utils/Utils.h"
-// ===== CONSTRUCTOR / DESTRUCTOR =====
-KhachHang::KhachHang(std::string t) : ten(t) {}
-KhachHang::~KhachHang() {}
+
+bool KhachHang::daTonTaiGhe(const std::string& ngay,
+                            const std::string& zone,
+                            const std::string& seat) const {
+    for (const auto& ve : danhSachVe) {
+        if (ve->getNgaySuDung() == ngay &&
+            ve->getKhuVuc() == zone &&
+            ve->getSoGhe() == seat) {
+            return true;
+            }
+    }
+    return false;
+}
+// ===== CONSTRUCTOR TU CSV =====
+KhachHang::KhachHang(const std::string& ma,
+                     const std::string& t,
+                     const std::string& phone)
+    : maKH(ma), ten(t), sdt(phone) {}
+
+// ===== CONSTRUCTOR CU =====
+KhachHang::KhachHang(const std::string& t)
+    : ten(t) {}
 
 // ===== RULE OF FIVE =====
 KhachHang::KhachHang(const KhachHang& other)
@@ -84,4 +103,8 @@ void KhachHang::hienThiThongTin() const {
               << formatTien(tongTien())
               << " VND\n";
     std::cout << "----------------------------------\n";
+}
+
+std::string KhachHang::getMaKH() const {
+    return maKH;
 }
