@@ -168,13 +168,13 @@ void Menu::xuLyMuaVe(KhachHang& kh) {
                     trangThai = xuLyChonGhe("TierB", seat, zone);
                     if (trangThai != TrangThaiMuaVe::THANH_CONG) break;
 
-                    if (kh.daTonTaiGhe(ngay, zone, seat)) {
+                    if (kh.daTonTaiGhe(ngay, zone, seat, false)) {
                         std::cout << "[ERROR] Ghe " << seat
                                   << " (khu vuc " << zone
-                                  << ") ngay " << ngay
-                                  << " da duoc mua!\n";
+                                  << ") da duoc mua trong ngay "
+                                  << ngay << "!\n";
                         trangThai = TrangThaiMuaVe::LOI_GHE;
-                        break; // ✅ quay lại menu mua vé
+                        break;
                     }
 
 
@@ -192,13 +192,13 @@ void Menu::xuLyMuaVe(KhachHang& kh) {
                     if (trangThai != TrangThaiMuaVe::THANH_CONG) break;
 
 
-                    if (kh.daTonTaiGhe(ngay, zone, seat)) {
+                    if (kh.daTonTaiGhe(ngay, zone, seat, false)) {
                         std::cout << "[ERROR] Ghe " << seat
                                   << " (khu vuc " << zone
-                                  << ") ngay " << ngay
-                                  << " da duoc mua!\n";
+                                  << ") da duoc mua trong ngay "
+                                  << ngay << "!\n";
                         trangThai = TrangThaiMuaVe::LOI_GHE;
-                        break; // ✅ quay lại menu mua vé
+                        break;
                     }
 
 
@@ -213,13 +213,13 @@ void Menu::xuLyMuaVe(KhachHang& kh) {
                     trangThai = xuLyChonGhe("TierS", seat, zone);
                     if (trangThai != TrangThaiMuaVe::THANH_CONG) break;
 
-                    if (kh.daTonTaiGhe(ngay, zone, seat)) {
+                    if (kh.daTonTaiGhe(ngay, zone, seat, false)) {
                         std::cout << "[ERROR] Ghe " << seat
                                   << " (khu vuc " << zone
-                                  << ") ngay " << ngay
-                                  << " da duoc mua!\n";
+                                  << ") da duoc mua trong ngay "
+                                  << ngay << "!\n";
                         trangThai = TrangThaiMuaVe::LOI_GHE;
-                        break; // ✅ quay lại menu mua vé
+                        break;
                     }
 
 
@@ -237,10 +237,10 @@ void Menu::xuLyMuaVe(KhachHang& kh) {
 
                     const std::string NGAY_3DAY = "15-16-17/05/2026";
 
-                    if (kh.daTonTaiGhe(NGAY_3DAY, zone, seat)) {
+                    if (kh.daTonTaiGhe("15-16-17/05/2026", zone, seat, true)) {
                         std::cout << "[ERROR] Ghe " << seat
                                   << " (khu vuc " << zone
-                                  << ") Tier 3-Day Pass da duoc mua!\n";
+                                  << ") da duoc mua o mot ve khac!\n";
                         trangThai = TrangThaiMuaVe::LOI_GHE;
                         break;
                     }

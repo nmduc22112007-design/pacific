@@ -2,24 +2,34 @@
 #include <iostream>
 #include <iomanip>
 #include "../Utils/Utils.h"
-
 bool KhachHang::daTonTaiGhe(const std::string& ngay,
                             const std::string& zone,
-                            const std::string& seat) const {
+                            const std::string& seat,
+                            bool laVe3DayPass) const {
     for (const auto& ve : danhSachVe) {
-        if (ve->getNgaySuDung() == ngay &&
-            ve->getKhuVuc() == zone &&
-            ve->getSoGhe() == seat) {
 
+        // ✅ Nếu GHẾ KHÁC → bỏ qua
+        if (ve->getKhuVuc() != zone ||
+            ve->getSoGhe() != seat)
+            continue;
 
-            // ✅ 3-Day Pass không so ngày
-            if (ve->getTenTier() == "3DayPass")
-                return true;
+        // ✅ NẾU ĐANG MUA 3-DAY PASS
+        if (laVe3DayPass) {
+            // ❌ Ghế đã tồn tại ở BẤT KỲ vé nào
+            return true;
+        }
 
-            if (ve->getNgaySuDung() == ngay)
-                return true;
-            }
+        // ✅ NẾU VÉ ĐÃ TỒN TẠI LÀ 3-DAY PASS
+        if (ve->getTenTier() == "3DayPass") {
+            return true;
+        }
+
+        // ✅ VÉ THƯỜNG: CHỈ CẤM KHI TRÙNG NGÀY
+        if (ve->getNgaySuDung() == ngay) {
+            return true;
+        }
     }
+
     return false;
 }
 

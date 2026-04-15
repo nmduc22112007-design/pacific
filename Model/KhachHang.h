@@ -26,7 +26,8 @@ public:
 
     bool daTonTaiGhe(const std::string& ngay,
                  const std::string& zone,
-                 const std::string& seat) const;
+                 const std::string& seat,
+                 bool laVe3DayPass) const;
     bool hoanVeTheoGhe(const std::string& ngay,
                    const std::string& seat);
     // Constructor mới (dùng cho CSV)
