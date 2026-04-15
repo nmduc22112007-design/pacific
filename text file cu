@@ -73,4 +73,4 @@ So luong ve: 3
   Ve 3 | Ngay: 15-16-17/05/2026 | Gia: 3,315,000 VND
 Tong tien: 9,945,000 VND
 ----------------------------------
-sửa lại bài sao cho in ra như này, tuy nhiên chương trình phải in ra thông tin của toàn bộ khách hàng(bao gồm TOÀN BỘ các khách hàng đã tạo trong file csv và khách hàng nhập từ người dùng là in ra cuối cùng), bao gồm họ tên, mã kh, số điện thoại, số vé đã mua, số thứ tự của vé, ngày thi đấu,  hạng vé( và khu vực của vé đó), giá tiền của từng vé và tổng tiền phải thanh toán như trên
+sửa lại bài sao cho in ra như này, tuy nhiên chương trình phải in ra thông tin của toàn bộ khách hàng(bao gồm TOÀN BỘ các khách hàng đã tạo trong file csv và khách hàng nhập từ người dùng là in ra cuối cùng), bao gồm mã hóa đơn(quan trọng vì đây là thứ dùng để kiểm tra lịch sử mua vé của từng khách hàng sau này), họ tên, mã kh, số điện thoại, số vé đã mua, số thứ tự của vé, ngày thi đấu,  hạng vé( và khu vực của vé đó), giá tiền của từng vé và tổng tiền phải thanh toán như trên, cuối cùng là chi tiết hóa đơn.

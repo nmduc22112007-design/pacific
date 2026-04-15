@@ -315,4 +315,3 @@ void Menu::xuLyMuaVe(KhachHang& kh) {
               << formatTien(kh.tongTien())
               << " VND\n";
 }
-
