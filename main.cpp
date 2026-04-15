@@ -9,10 +9,8 @@ int main() {
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
 
-    // ===== KHOI TAO CONTROLLER =====
+    // ===== KHOI TAO CONTROLLER + LOAD DU LIEU THAT TU CSV =====
     TicketManager manager;
-    manager.loadKhachHangCSV("Data/KhachHang.csv");
-    // ===== LOAD DU LIEU THAT TU CSV =====
     manager.loadKhachHangCSV("Data/KhachHang.csv");
 
     // ===== GOI MENU HE THONG =====
