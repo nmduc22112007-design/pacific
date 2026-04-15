@@ -246,7 +246,7 @@ void Menu::xuLyMuaVe(KhachHang& kh) {
                     std::cout << "[OK] Mua ve thanh cong!\n";
                 else if (trangThai == TrangThaiMuaVe::LOI_GIOI_HAN) {
                     std::cout << "[ERROR] Da dat gioi han toi da 4 ve!\n";
-                    return;
+                    break;
                 }
                 // LOI_GHE: chi bao loi, KHONG thoat
             }
