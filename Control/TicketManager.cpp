@@ -13,11 +13,11 @@ void TicketManager::loadKhachHangCSV(const std::string& path) {
         std::string maKH = r[0];
         std::string ten  = r[1];
         std::string sdt  = r[2];
-
         dsKhachHang.push_back(
-            std::make_shared<KhachHang>(maKH, ten, sdt)
-        );
-    }
+            std::make_shared<KhachHang>(r[0], r[1], r[2])
+            );
+        }
+
 
     std::cout << "[INFO] Da load "
               << dsKhachHang.size()
